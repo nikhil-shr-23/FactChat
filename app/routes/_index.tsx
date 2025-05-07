@@ -2,54 +2,47 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "FactChat - Home" },
+    { name: "description", content: "Welcome to FactChat - Engage in meaningful, fact-based conversations" },
   ];
 };
 
 export default function Index() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
+    <main className="min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="max-w-4xl w-full text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          Welcome to <span className="text-blue-600">FactChat</span>
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-600 mb-8">
+          Your platform for engaging in meaningful, fact-based conversations and discussions.
+        </p>
+        <div className="space-y-4">
+          <p className="text-lg text-gray-700">
+            Join our community to:
           </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
+          <ul className="space-y-2 text-left max-w-md mx-auto">
+            <li className="flex items-center">
+              <span className="mr-2">✓</span>
+              <span>Engage in fact-based discussions</span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✓</span>
+              <span>Share verified information</span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✓</span>
+              <span>Learn from diverse perspectives</span>
+            </li>
           </ul>
-        </nav>
+        </div>
+        <div className="mt-12">
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">
+            Get Started
+          </button>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
 
